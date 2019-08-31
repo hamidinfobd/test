@@ -1,0 +1,47 @@
+@import "./../../shared/styles/app-color";
+@import "./../../shared/styles/app-typo";
+@import "./../../shared/styles/app-mixin";
+
+nav {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 1) !important;
+    border-bottom: 4px solid $appPrimaryColor;
+    margin-bottom: -.25rem;
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, .1);
+    @include appPrimary-font();
+
+    .navbar-brand {
+        color: $appPrimaryColor;
+        font-size: $appFontSizeBrandingLogo;
+        font-weight: $appFontWeightBold;
+    }
+
+    ul {
+        flex-wrap: wrap;
+        li {
+            a {
+                white-space: nowrap;
+                &.nav-link {
+                    padding: 0.25rem 1rem !important;
+                    border: 1px solid $appPrimaryColor;
+                    border-radius: 10rem;
+                    margin-left: .5rem;
+                    color: $appPrimaryColor;
+                    margin-bottom: .25rem;
+                }
+                &.active {
+                    background: $appPrimaryColor;
+                    color: #fff;
+                }
+                &:hover {
+                    background: $appPrimaryColor;
+                    color: #fff;
+                    transition: all .2s ease-in-out;
+                }
+            }
+        }
+    }
+
+}

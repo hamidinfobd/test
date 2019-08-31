@@ -1,0 +1,19 @@
+<div id="myOwlDiv">
+
+  <owl-carousel-o [options]="customOptions">
+    <ng-template *ngFor="let info of infos" carouselSlide>
+
+      <div class="card">
+        <img src="{{ info.imageLink }}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{ info.title }}</h5>
+          <p class="card-text">{{ info.description }}</p>
+          <a class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+
+    </ng-template>
+  </owl-carousel-o>
+
+</div>

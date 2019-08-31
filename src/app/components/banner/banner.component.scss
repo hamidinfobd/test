@@ -1,0 +1,45 @@
+@import "./../../shared/styles/app-color";
+@import "./../../shared/styles/app-typo";
+@import "./../../shared/styles/app-mixin";
+
+
+
+
+#appBanner {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-content: center;
+}
+
+
+.heading2 {
+    span {
+        color: $appPrimaryColor;
+    }
+    margin-bottom: 2rem;
+}
+
+a {
+    &.btn{
+
+        white-space: nowrap;
+        padding: 0.5rem 1rem !important;
+        border: 1px solid $appPrimaryColor;
+        border-radius: 10rem;
+        margin-left: .5rem;
+        color: $appPrimaryColor;
+        margin-bottom: .25rem;
+      
+        &.appBtn-dark {
+          background: $appPrimaryColor;
+          color: #fff;
+        }
+      
+        &:hover {
+          background: $appPrimaryColor;
+          color: #fff;
+          transition: all .2s ease-in-out;
+        }
+    }
+}
