@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./app/shared/styles/app-color";
+@import "./app/shared/styles/app-typo";
+@import "./app/shared/styles/app-mixin";
 
 html, body {
     margin: 0;
@@ -6,6 +9,90 @@ html, body {
     position: relative;
     height: 100%;
     width: 100%;
+    max-width: 100% !important;
+    height: 100vh;
+    width: 100vw;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    box-sizing: border-box;
+    font-size: 16px;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.section {
+    margin: 3rem 0;
+    padding: 3rem 0;
+    // background: rgba(255, 0, 0, .1);
+
+    .section-heading{
+        font-size: 2.5rem;
+        text-align: center;
+        color: $appPrimaryColor;
+        font-family: Ubuntu;
+        font-weight: 900;
+        position: relative;
+        // border: 1px solid;
+        &::after {
+          content: "";
+          width: 10%;
+          left: 50%;
+          bottom: -0.20rem;
+          height: 2px;
+          position: absolute;
+          background: green;
+          border-radius: 1rem;
+          transform: translate(-50%, 0);
+          opacity: .25;
+        }
+    }
+    .section-subheading {
+        font-size: 1.5rem;
+        text-align: center;
+        color: lighten($appPrimaryColor, 10%);
+        // border: 1px solid;
+    }
+    .section-content {
+        margin: 2rem 0;
+        // border: 1px solid;
+    }
+
+
+
+    &.section-team {
+
+    }
+
+    &:hover {
+        ::after {
+          opacity: .5;
+          transform: translateX(-45%);
+        }
+        
+    }
+    
+}
+
+
+#team {
+  .owl-stage {
+    display: flex !important;
+
+    .owl-item {
+      display: flex !important;
+      &:hover {
+        .card {
+            border-color: $appPrimaryColor;
+            transition: all ease-in-out .2s;
+        }
+        img.team-img {
+            // border-color: $appPrimaryColor !important;
+            border-radius: 0 !important;
+            transition: all ease-in-out .2s;
+        }
+        .card-body {
+            // background: rgba(100, 100, 100, .1);
+        }
+          
+      }
+    }
+  }
+}
+

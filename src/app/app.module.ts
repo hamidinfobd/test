@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 // Modules
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -19,6 +20,10 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { OwlCarComponent } from './components/owl-car/owl-car.component';
 
+// Services
+import { TeamService } from './services/team.service';
+import { TeamComponent } from './components/team/team.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,18 +32,20 @@ import { OwlCarComponent } from './components/owl-car/owl-car.component';
     MytestComponent,
     SidenavComponent,
     SliderComponent,
-    OwlCarComponent
+    OwlCarComponent,
+    TeamComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     NgbModule,
     BrowserAnimationsModule,
     MatSidenavModule,
     CarouselModule
 
   ],
-  providers: [],
+  providers: [TeamService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

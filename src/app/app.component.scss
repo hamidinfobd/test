@@ -1,14 +1,19 @@
+@import "./shared/styles/app-color";
+@import "./shared/styles/app-typo";
+@import "./shared/styles/app-mixin";
+
 .bg-banner {
     background-image: url("./../assets/images/image1.jpg");
     content: "";
     height: 100%;
     width: 100%;
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     background-size: cover;
+    background-position: center center;
     &:before {
-        opacity: .75;
+        opacity: .80;
         content: "";
         background-color: white;
         position: absolute;

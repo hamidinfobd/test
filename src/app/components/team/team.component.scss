@@ -1,0 +1,30 @@
+@import "./../../shared/styles/app-color";
+@import "./../../shared/styles/app-typo";
+@import "./../../shared/styles/app-mixin";
+
+
+#team {
+    .team-img {
+      max-width: 165px !important;
+      border: 1px solid transparent;
+      border-radius: 100%;
+      overflow: hidden;
+      background: $appPrimaryColor;
+      margin: 0 auto;
+      margin-top: 1rem;
+    }
+
+    .card {
+      width: 100%;
+      margin: 1px;
+      .card-text {
+          font-style: italic;
+      }
+      
+    }
+
+    
+
+}
+
+

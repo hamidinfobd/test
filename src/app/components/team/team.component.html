@@ -1,0 +1,22 @@
+<div id="team" class="row section section-team">
+  <div class="col-md-12">
+    <h2 class="section-heading">{{ teamData.message }}</h2>
+    <h4 class="section-subheading">Here are the members.</h4>
+    <div class="section-content">
+      <owl-carousel-o [options]="customOptions">
+        <ng-template *ngFor="let teamMember of teamData.team" carouselSlide>
+          <div class="card text-center">
+            <img src="{{ teamMember.profile_image }}" class="card-img-top team-img" alt="{{ teamMember.team_id  }}">
+            <div class="card-body">
+              <h4 class="card-title">{{ teamMember.name | uppercase }}</h4>
+              <h6 class="card-text">{{ teamMember.designation }}</h6>
+              <p>{{ teamMember.email }}</p>
+              <p>{{ teamMember.facebook }}</p>
+              <p>{{ teamMember.linkedIn }}</p>
+            </div>
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  </div>
+</div>
