@@ -9,6 +9,11 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 
 import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { faSquare, faCheckSquare, faAt, faCaretLeft, faCaretRight, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faSquare as farSquare, faCheckSquare as farCheckSquare } from '@fortawesome/free-regular-svg-icons';
+import { faStackOverflow, faGithub, faMedium, faFacebook, 
+  faFacebookSquare, faLinkedin, faLinkedinIn,  } from '@fortawesome/free-brands-svg-icons'; 
 
 // Components
 
@@ -42,13 +47,17 @@ import { TeamComponent } from './components/team/team.component';
     NgbModule,
     BrowserAnimationsModule,
     MatSidenavModule,
-    CarouselModule
+    CarouselModule,
+    FontAwesomeModule
 
   ],
   providers: [TeamService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor() {
+  constructor(private library: FaIconLibrary) {
+    library.addIcons(faSquare, faCheckSquare, farCheckSquare, farCheckSquare, 
+      faStackOverflow, faGithub, faMedium, faAt, faFacebook, faFacebookSquare, 
+      faLinkedin, faLinkedinIn, faCaretLeft, faCaretRight, faChevronLeft, faChevronRight);
   }
  }

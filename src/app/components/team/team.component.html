@@ -6,13 +6,25 @@
       <owl-carousel-o [options]="customOptions">
         <ng-template *ngFor="let teamMember of teamData.team" carouselSlide>
           <div class="card text-center">
-            <img src="{{ teamMember.profile_image }}" class="card-img-top team-img" alt="{{ teamMember.team_id  }}">
+            <div class="card-img-wrapper">
+              <img src="{{ teamMember.profile_image }}" class="card-img-top team-img" alt="{{ teamMember.team_id  }}">
+            </div>
             <div class="card-body">
               <h4 class="card-title">{{ teamMember.name | uppercase }}</h4>
               <h6 class="card-text">{{ teamMember.designation }}</h6>
-              <p>{{ teamMember.email }}</p>
-              <p>{{ teamMember.facebook }}</p>
-              <p>{{ teamMember.linkedIn }}</p>
+              <p *ngIf="teamMember.email">
+                <fa-icon [icon]="['fas', 'at']"></fa-icon>
+                {{ teamMember.email }}
+              </p>
+              <p *ngIf="teamMember.facebook">
+                <fa-icon [icon]="['fab', 'facebook']"></fa-icon>
+                {{ teamMember.facebook }}
+              </p>
+              <p *ngIf="teamMember.linkedIn">
+                <fa-icon [icon]="['fab', 'linkedin']"></fa-icon>
+                {{ teamMember.linkedIn }}
+              </p>
+              
             </div>
           </div>
         </ng-template>

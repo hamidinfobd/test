@@ -9,19 +9,45 @@
       border: 1px solid transparent;
       border-radius: 100%;
       overflow: hidden;
-      background: $appPrimaryColor;
-      margin: 0 auto;
-      margin-top: 1rem;
+      z-index: 1;
+      margin: 0 auto !important;
     }
 
     .card {
       width: 100%;
       margin: 1px;
+      border: none;
+      .card-body {
+          position: relative;
+          background: rgba(0, 0, 0, .01);
+          top: -1rem;
+          padding-top: 2rem;
+          border: 1px solid rgba(0, 0, 0, .1);
+          border-radius: 1rem;
+          p {
+              margin: 0;
+              margin-top: .25rem;
+              font-size: .84rem;
+              &:nth-of-type(1) {
+                margin-top: 1.5rem;
+              }
+
+              fa-icon {
+                padding-right: .5rem;
+              }
+          }
+      }
+      .card-title {
+          font-size: 1rem;
+          font-weight: 700;
+      }
       .card-text {
           font-style: italic;
       }
       
     }
+
+    
 
     
 

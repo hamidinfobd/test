@@ -53,7 +53,7 @@ export class TeamService {
         "name": "Nahidul Islam",
         "email": "",
         "designation": "Finance",
-        "profile_image": "",
+        "profile_image": "./../../assets/images/image3.jpg",
         "facebook": "",
         "linkedIn": ""
       },
@@ -62,7 +62,7 @@ export class TeamService {
         "name": "Md Hamidur Rhaman",
         "email": "",
         "designation": "Web Developer",
-        "profile_image": "",
+        "profile_image": "./../../assets/images/image1.jpg",
         "facebook": "hamidinfobd",
         "linkedIn": "hamidinfobd"
       }

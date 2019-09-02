@@ -88,11 +88,44 @@ html, body {
             transition: all ease-in-out .2s;
         }
         .card-body {
-            // background: rgba(100, 100, 100, .1);
+            background: rgba(0, 255, 0, .05) !important;
         }
           
       }
     }
+  }
+
+  .owl-nav>div {
+    position: absolute;
+    left: -2rem;
+    top: 50%;
+    background: red !important;
+    opacity: .2;
+    color: white !important;
+    transition: all ease-in-out .2s;
+  }
+
+  .owl-nav>div.owl-next {
+      left: auto;
+      right: -2rem;
+  }
+
+  &:hover {
+    .owl-nav>div.owl-prev {
+      left: -1rem;
+      opacity: .5;
+    }
+
+    .owl-nav>div.owl-next {
+      right: -1rem;
+      opacity: .5;
+    }
+  }
+
+  .owl-dot.active span {
+    background: red !important;
+    opacity: .1;
+    transition: all ease-in-out .2s;
   }
 }
 

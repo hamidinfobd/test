@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { TeamService } from './../../services/team.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-team',
@@ -9,6 +11,8 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./team.component.scss']
 })
 export class TeamComponent implements OnInit {
+
+  faCoffee = faCoffee;
 
   teamData: any = {};
 
@@ -31,7 +35,8 @@ export class TeamComponent implements OnInit {
     pullDrag: true,
     dots: true,
     navSpeed: 700,
-    navText: ['Prev', 'Next'],
+    // navText: ['Prev', 'Next'],
+    navText: ['<', '>'],
     nav: true,
     items: 10,
     responsive: {
