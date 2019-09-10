@@ -7,7 +7,7 @@
         <ng-template *ngFor="let teamMember of teamData.team" carouselSlide>
           <div class="card text-center">
             <div class="card-img-wrapper">
-              <img src="{{ teamMember.profile_image }}" class="card-img-top team-img" alt="{{ teamMember.team_id  }}">
+              <img [src]="teamMember.profile_image || defaultTeamImageUrl" class="card-img-top team-img" alt="{{ teamMember.team_id  }}">
             </div>
             <div class="card-body">
               <h4 class="card-title">{{ teamMember.name | uppercase }}</h4>

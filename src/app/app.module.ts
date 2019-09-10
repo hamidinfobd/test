@@ -9,6 +9,8 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 
 import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SidebarModule } from 'ng-sidebar';
+
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faSquare, faCheckSquare, faAt, faCaretLeft, faCaretRight, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { faSquare as farSquare, faCheckSquare as farCheckSquare } from '@fortawesome/free-regular-svg-icons';
@@ -28,6 +30,7 @@ import { OwlCarComponent } from './components/owl-car/owl-car.component';
 // Services
 import { TeamService } from './services/team.service';
 import { TeamComponent } from './components/team/team.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,8 @@ import { TeamComponent } from './components/team/team.component';
     SidenavComponent,
     SliderComponent,
     OwlCarComponent,
-    TeamComponent
+    TeamComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +52,8 @@ import { TeamComponent } from './components/team/team.component';
     BrowserAnimationsModule,
     MatSidenavModule,
     CarouselModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    SidebarModule.forRoot()
 
   ],
   providers: [TeamService],

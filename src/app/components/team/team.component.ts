@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { TeamService } from './../../services/team.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faCaretLeft } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -13,17 +14,50 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 export class TeamComponent implements OnInit {
 
   faCoffee = faCoffee;
+  faCaretLeft = faCaretLeft;
 
-  teamData: any = {};
+  defaultTeamImageUrl = "./../../../assets/images/infoboxProfileImage.jpg";
+  teamData = {
+    "error": false,
+    "total": 6,
+    "message": "Team of Infobox",
+    "team": [
+      {
+        "team_id": 1,
+        "name": "Abdullah Al-Hasnat",
+        "email": "mail@hasnat.xyz",
+        "designation": "Founder and Software Engineer",
+        "profile_image": "./../../../assets/images/infoboxProfileImage.jpg",
+        "facebook": "TheHasnatBD",
+        "linkedIn": "TheHasnatBD"
+      },
+      {
+        "team_id": 5,
+        "name": "Mehedi Hasan",
+        "email": "",
+        "designation": "Web Developer",
+        "profile_image": "./../../../assets/images/infoboxProfileImage.jpg",
+        "facebook": "Shuvo.r24",
+        "linkedIn": "Shuvo.r24"
+      }
+    ]
+  };
 
   constructor(private teamService: TeamService) { }
 
   ngOnInit() {
-    this.teamData = this.teamService.getTeam();
-    console.log("Team Data Error:" + this.teamData.error);
-    console.log("Team Data Total:" + this.teamData.total);
-    console.log("Team Data Message:" + this.teamData.message);
-    console.log("Team Data Team:" + this.teamData.team);
+
+    this.teamService.getTeam().subscribe(
+      (response) => {
+        console.log("RESPONSE IS:--> ", response);
+
+        this.teamData = response;
+
+      },
+      (error) => {
+        console.log("ERROR--> " + error);
+      }
+    );
 
   }
 
